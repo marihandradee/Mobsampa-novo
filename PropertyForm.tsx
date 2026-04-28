@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImovelFormData, Regiao, TipoImovel, Modalidade } from '../types';
+import { ImovelFormData, Regiao, TipoImovel, Modalidade } from '../../../types';
 import { Train, Bus, ShoppingCart, ArrowLeft, Loader2 } from 'lucide-react';
 
 interface PropertyFormProps {

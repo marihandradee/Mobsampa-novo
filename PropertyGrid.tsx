@@ -1,4 +1,4 @@
-import { Imovel } from '../types';
+import { Imovel } from '../../../types';
 import PropertyCard from './PropertyCard';
 import { motion } from 'motion/react';
 

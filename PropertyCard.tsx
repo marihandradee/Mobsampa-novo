@@ -1,5 +1,5 @@
 import { Train, Bus, ShoppingCart, Maximize2 } from 'lucide-react';
-import { Imovel } from '../types';
+import { Imovel } from '../../../types';
 
 interface PropertyCardProps {
   imovel: Imovel;

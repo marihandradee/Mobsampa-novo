@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseConfigured } from './lib/supabase';
-import { Imovel, ImovelFormData, Regiao } from './types';
+import { Imovel, ImovelFormData, Regiao } from '../../types';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PropertyGrid from './components/PropertyGrid';

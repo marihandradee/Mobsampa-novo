@@ -1,5 +1,5 @@
 import { Search, MapPin } from 'lucide-react';
-import { Regiao } from '../types';
+import { Regiao } from '../../../types';
 
 interface HeaderProps {
   onSearch: (term: string) => void;
