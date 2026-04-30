@@ -51,8 +51,8 @@ export default function App() {
 
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
-      result = result.filter(i => 
-        i.descricao.toLowerCase().includes(term) || 
+      result = result.filter(i =>
+        i.descricao.toLowerCase().includes(term) ||
         i.tipo.toLowerCase().includes(term) ||
         i.regiao.toLowerCase().includes(term)
       );
@@ -63,7 +63,7 @@ export default function App() {
 
   const cadastrarImovel = async (data: ImovelFormData) => {
     if (!isSupabaseConfigured) return;
-    
+
     const { error } = await supabase
       .from('imoveis')
       .insert([data]);
@@ -103,7 +103,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header 
+      <Header
         onSearch={setSearchTerm}
         onFilterRegiao={setSelectedRegiao}
         onNavigate={setCurrentPage}
@@ -112,15 +112,15 @@ export default function App() {
       {currentPage === 'home' ? (
         <main>
           <Hero />
-          
+
           {/* About Us Section */}
           <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Por que escolher a MobSampa?</h2>
-                <p className="text-gray-500 max-w-2xl mx-auto">Reinventamos o mercado imobiliário paulistano com tecnologia e transparência.</p>
+                <p className="text-gray-500 max-w-2xl mx-auto">Conectamos você aos melhores imóveis de São Paulo com tecnologia, transparência e agilidade.</p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6">
@@ -129,7 +129,7 @@ export default function App() {
                   <h3 className="text-xl font-bold mb-3">100% Online</h3>
                   <p className="text-gray-500">Desde a visita virtual até a assinatura do contrato, tudo sem sair de casa.</p>
                 </div>
-                
+
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6">
                     <Building2 className="text-vibrant-red w-8 h-8" />
@@ -137,7 +137,7 @@ export default function App() {
                   <h3 className="text-xl font-bold mb-3">Estoque Curado</h3>
                   <p className="text-gray-500">Os melhores imóveis nas regiões mais estratégicas de São Paulo.</p>
                 </div>
-                
+
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6">
                     <ShieldCheck className="text-vibrant-red w-8 h-8" />
@@ -160,17 +160,17 @@ export default function App() {
                 {filteredImoveis.length} {filteredImoveis.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}
               </div>
             </div>
-            
-            <PropertyGrid 
-              imoveis={filteredImoveis} 
-              loading={loading} 
+
+            <PropertyGrid
+              imoveis={filteredImoveis}
+              loading={loading}
             />
           </section>
         </main>
       ) : (
-        <PropertyForm 
-          onSubmit={cadastrarImovel} 
-          onBack={() => setCurrentPage('home')} 
+        <PropertyForm
+          onSubmit={cadastrarImovel}
+          onBack={() => setCurrentPage('home')}
         />
       )}
 
@@ -182,11 +182,11 @@ export default function App() {
             </div>
             <span className="text-xl font-bold">MobSampa</span>
           </div>
-          
+
           <div className="text-gray-400 text-sm">
-            © 2024 MobSampa Imobiliária Digital. Todos os direitos reservados.
+            © 2026 MobSampa Imobiliária Digital. Todos os direitos reservados.
           </div>
-          
+
           <div className="flex gap-6 text-sm font-medium">
             <a href="#" className="hover:text-vibrant-red transition-colors">Termos</a>
             <a href="#" className="hover:text-vibrant-red transition-colors">Privacidade</a>
